@@ -11,31 +11,23 @@ public class TestListaLigada {
         lista.setNewElement("Rogério");
         lista.setNewElement("Seilá");
 
-
-        System.out.println(lista.getFirst().getValue());
-        System.out.println(lista.getFirst().getNext().getValue());
-        System.out.println(lista.getFirst().getNext().getNext().getValue());
-        System.out.println(lista.getFirst().getNext().getNext().getNext().getValue());
-
-
-
-
-        System.out.println("--------------------");
-
-
-        lista.deleteElement("Mateus");
-        System.out.println(lista.getFirst().getValue());
-        System.out.println(lista.getFirst().getNext().getValue());
-        System.out.println(lista.getFirst().getNext().getNext().getValue());
-
-        System.out.println("------------------");
+        lista.getAllElements();
+        System.out.println("-------------------");
+        lista.getElement("Rogér");
+        System.out.println("-------------------");
         System.out.println(lista.getSize());
-        System.out.println(lista.getElement(4).getValue());
-        lista.setNewElement("Novo");
-        System.out.println(lista.getFirst().getNext().getNext().getNext().getValue());
 
-        System.out.println("--------------------");
-        System.out.println(lista.getElement(4).getValue());
+        lista.deleteElement("Marco");
+        lista.getAllElements();
+        System.out.println(lista.getSize());
+        lista.setNewElement("NovoNome");
+        lista.getAllElements();
+        System.out.println(lista.getSize());
+        System.out.println("-------------");
+        lista.getAllElements();
+        System.out.println("-------------");
+        lista.modifyElement("Mateus", "Mateus Laranjeira");
+        lista.getAllElements();
 
 
     }

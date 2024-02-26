@@ -8,20 +8,20 @@ public class Node {
         this.value = newValue;
     }
 
-    public void setNode(Node newElement){
-        this.next = newElement;
-    }
-
-    public Node getNext(){
+    public Node getNext() {
         return next;
     }
 
-    public void setValue(String newValue){
-        this.value = newValue;
+    public void setNext(Node next) {
+        this.next = next;
     }
 
-    public String getValue(){
+    public String getValue() {
         return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
     }
 }
 
