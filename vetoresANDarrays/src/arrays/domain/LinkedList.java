@@ -36,7 +36,7 @@ public class LinkedList {
             last.setNode(newElement);
             last = newElement;
         }
-        size++;
+        size++; //novo
     }
 
     public Node getElement(int position){
