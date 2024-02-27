@@ -1,6 +1,6 @@
-package arrays.test;
+package linkedlist.test;
 
-import arrays.domain.LinkedList;
+import linkedlist.domain.LinkedList;
 
 public class TestListaLigada {
     public static void main(String[] args) {
@@ -28,7 +28,6 @@ public class TestListaLigada {
         System.out.println("-------------");
         lista.modifyElement("Mateus", "Mateus Laranjeira");
         lista.getAllElements();
-
-
+        System.out.println(lista.getSize());
     }
 }

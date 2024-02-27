@@ -1,4 +1,4 @@
-package arrays.domain;
+package linkedlist.domain;
 
 public class BuscaLinear {
     public static void main(String[] args) {

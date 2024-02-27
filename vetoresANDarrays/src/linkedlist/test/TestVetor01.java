@@ -1,6 +1,6 @@
-package arrays.test;
+package linkedlist.test;
 
-import arrays.domain.Vetor;
+import linkedlist.domain.Vetor;
 
 public class TestVetor01 {
     public static void main(String[] args) {

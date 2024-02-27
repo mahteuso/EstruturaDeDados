@@ -1,18 +1,16 @@
-package arrays.domain;
+package generclinkedlist.domain;
 
-import javax.lang.model.element.Element;
-
-public class LinkedList {
-    private Node first;
-    private Node last;
+public class LinkedList<TYPE> {
+    private Node<TYPE> first;
+    private Node<TYPE> last;
     private int size;
 
     public LinkedList() {
         this.size = 0;
     }
 
-    public void setNewElement(String newValue) {
-        Node element = new Node(newValue);
+    public void setNewElement(TYPE newValue) {
+        Node<TYPE> element = new Node<TYPE>(newValue);
         if (first == null && last == null) {
             first = element;
             last = element;
@@ -24,24 +22,12 @@ public class LinkedList {
         size++;
     }
 
-    public void getAllElements() {
-        Node local = first;
-        for (int i = 0; i < size; i++) {
-            if (i == 0) {
-                System.out.println(local.getValue());
-            } else {
-                local = local.getNext();
-                System.out.println(local.getValue());
-            }
-        }
-    }
 
-    public void getElement(String value) {
-        Node local = first;
+    public TYPE getElement(TYPE value) {
+        Node<TYPE> local = first;
         for (int i = 0; i < size; i++) {
-            if (local.getValue().equalsIgnoreCase(value)) {
-                System.out.println("Name: " + value + " is in our database.");
-                break;
+            if (local.getValue().equals(value)) {
+                return value;
             } else if (i == (size - 1) && local.getValue() != value) {
                 System.out.println("Name not found");
 
@@ -50,12 +36,13 @@ public class LinkedList {
 
             }
         }
+        return value;
     }
 
-    public void modifyElement(String value, String newValue) {
-        Node local = first;
+    public void modifyElement(TYPE value, TYPE newValue) {
+        Node<TYPE> local = first;
         for (int i = 0; i < size; i++) {
-            if (local.getValue().equalsIgnoreCase(value)) {
+            if (local.getValue().equals(value)) {
                 local.setValue(newValue);
                 break;
             } else if (i == (size - 1) && local.getValue() != value) {
@@ -68,21 +55,21 @@ public class LinkedList {
         }
     }
 
-    public void deleteElement(String value) {
-        Node local = first;
-        Node previous;
+    public void deleteElement(TYPE value) {
+        Node<TYPE> local = first;
+        Node<TYPE> previous;
         for (int i=0; i < size; i++){
-            if (local.getValue().equalsIgnoreCase(value) && local.equals(first)){
+            if (local.getValue().equals(value) && local.equals(first)){
                 first = first.getNext();
                 size--;
-            } else if (!local.getValue().equalsIgnoreCase(value)){
+            } else if (!local.getValue().equals(value)){
                 previous = local;
                 local = local.getNext();
-                if (local.getValue().equalsIgnoreCase(value) && local.equals(last)){
+                if (local.getValue().equals(value) && local.equals(last)){
                     last = previous;
                     last.setNext(null);
                     size--;
-                } else if (local.getValue().equalsIgnoreCase(value)){
+                } else if (local.getValue().equals(value)){
                     previous.setNext(local.getNext());
                     local.setValue(null);
                     size--;
@@ -94,19 +81,23 @@ public class LinkedList {
         }
     }
 
-    public Node getFirst() {
+    public IteratorLinkedList<TYPE> getIterator(){
+        return new IteratorLinkedList<>(this.getFirst());
+    }
+
+    public Node<TYPE> getFirst() {
         return first;
     }
 
-    public void setFirst(Node first) {
+    public void setFirst(Node<TYPE> first) {
         this.first = first;
     }
 
-    public Node getLast() {
+    public Node<TYPE> getLast() {
         return last;
     }
 
-    public void setLast(Node last) {
+    public void setLast(Node<TYPE> last) {
         this.last = last;
     }
 

@@ -1,4 +1,4 @@
-package arrays.domain;
+package linkedlist.domain;
 
 import java.util.Arrays;
 
