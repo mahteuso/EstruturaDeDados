@@ -92,6 +92,6 @@ public class ListLinked<TYPE> {
     public int getSize() {
         return size;
     }
-
+// Modificação para ver no github
 
 }
