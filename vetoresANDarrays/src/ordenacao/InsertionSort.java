@@ -11,10 +11,11 @@ public class InsertionSort {
 
        int temp, j;
 
-        for (int i = 0; i < array.length; i++){
+        // COMPLEXIDADE O(N²)
+        for (int i = 0; i < array.length; i++){ // O(N)
             j = i - 1;
             temp = array[i];
-            while(j >= 0 && temp < array[j]){
+            while(j >= 0 && temp < array[j]){ // O(N)
                 array[j+1] = array[j];
                 j--;
             }
