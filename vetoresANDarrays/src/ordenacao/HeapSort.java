@@ -32,7 +32,7 @@ public class HeapSort {
         System.out.println("\n---------------------------------------");
 
     }
-
+    // Método que vai realizar a mudança de todos os nós e raiz principal da árvore binária
     private static void ordenaHeapSort(int[] vetor, int n, int i) {
         int raiz = i;
         int esq = 2 * i + 1;
